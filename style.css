@@ -289,19 +289,55 @@ h1 span {
 }
 
 .threshold-panel {
+  isolation: isolate;
+  overflow: hidden;
   position: relative;
   min-height: 560px;
   border-left: 1px solid var(--line);
   background:
-    linear-gradient(90deg, rgba(167, 189, 203, 0.74) 0 9%, transparent 9%),
+    radial-gradient(circle at 62% 48%, rgba(251, 231, 231, 0.5), transparent 18%),
+    linear-gradient(90deg, rgba(167, 189, 203, 0.82) 0 8%, transparent 8%),
     linear-gradient(rgba(35, 35, 34, 0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(35, 35, 34, 0.05) 1px, transparent 1px),
     rgba(216, 213, 208, 0.55);
-  background-size: auto, 120px 120px, 120px 120px, auto;
+  background-size: auto, auto, 120px 120px, 120px 120px, auto;
+}
+
+.threshold-panel::before {
+  position: absolute;
+  top: -0.14em;
+  right: -0.12em;
+  z-index: 0;
+  color: rgba(35, 35, 34, 0.052);
+  content: "間";
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
+  font-size: clamp(13rem, 24vw, 22rem);
+  line-height: 0.8;
+  pointer-events: none;
+  writing-mode: vertical-rl;
+}
+
+.threshold-panel::after {
+  position: absolute;
+  top: 16%;
+  right: 13%;
+  z-index: 0;
+  width: 38%;
+  height: 54%;
+  border: 1px solid rgba(35, 35, 34, 0.12);
+  background:
+    linear-gradient(180deg, rgba(251, 231, 231, 0.28), rgba(211, 224, 217, 0.14)),
+    rgba(246, 244, 241, 0.2);
+  box-shadow:
+    -18px 22px 0 rgba(167, 189, 203, 0.14),
+    26px -16px 0 rgba(251, 231, 231, 0.12);
+  content: "";
+  transform: translateY(10px);
 }
 
 .threshold-panel span {
   position: absolute;
+  z-index: 1;
   width: 12px;
   height: 12px;
   background: rgba(35, 35, 34, 0.08);
@@ -315,6 +351,10 @@ h1 span {
 .threshold-panel span:nth-child(2) {
   top: 47%;
   left: 58%;
+  width: 8px;
+  height: 8px;
+  background: rgba(35, 35, 34, 0.16);
+  transform: rotate(45deg);
 }
 
 .threshold-panel span:nth-child(3) {
@@ -326,9 +366,11 @@ h1 span {
   position: absolute;
   right: 18%;
   bottom: 20%;
+  z-index: 1;
   width: 42%;
   height: 1px;
   background: var(--line);
+  box-shadow: 0 -72px 0 rgba(35, 35, 34, 0.06);
 }
 
 .primary-links {
