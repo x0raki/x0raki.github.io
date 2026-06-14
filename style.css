@@ -120,10 +120,19 @@ main,
 }
 
 .hero-image {
+  position: relative;
+  overflow: hidden;
   min-height: 520px;
   background:
     linear-gradient(90deg, rgba(246, 244, 241, 0.08), rgba(246, 244, 241, 0.32)),
     url("assets/threshold-room.png") center / cover;
+}
+
+.hero-image::before,
+.hero-image::after {
+  position: absolute;
+  pointer-events: none;
+  content: "";
 }
 
 .hero-copy {
@@ -398,7 +407,7 @@ h1 span {
 .observation-trigger::before {
   position: absolute;
   inset: 12px;
-  background: rgba(35, 35, 34, 0.08);
+  background: rgba(142, 49, 45, 0.5);
   content: "";
   transform: rotate(45deg);
   transition:
@@ -408,7 +417,7 @@ h1 span {
 
 .observation-trigger:hover::before,
 .observation-trigger:focus-visible::before {
-  background: rgba(35, 35, 34, 0.28);
+  background: rgba(142, 49, 45, 0.82);
   transform: rotate(45deg) scale(1.28);
 }
 
@@ -700,6 +709,30 @@ body.observation-mode .hero-image {
   filter: grayscale(0.55) contrast(0.94) brightness(1.02);
 }
 
+body.observation-mode .hero-image::before {
+  right: 18.5%;
+  bottom: 30%;
+  width: clamp(30px, 4.4vw, 54px);
+  height: clamp(110px, 17vw, 190px);
+  border-radius: 48% 48% 24% 24% / 22% 22% 78% 78%;
+  background:
+    radial-gradient(ellipse at 50% 10%, rgba(35, 35, 34, 0.36) 0 18%, transparent 19%),
+    linear-gradient(180deg, rgba(35, 35, 34, 0.26), rgba(35, 35, 34, 0.08) 74%, transparent);
+  filter: blur(1.4px);
+  opacity: 0.46;
+  transform: skewX(-3deg);
+}
+
+body.observation-mode .hero-image::after {
+  right: 17.2%;
+  bottom: 29.5%;
+  width: clamp(52px, 7vw, 86px);
+  height: clamp(80px, 11vw, 130px);
+  background: radial-gradient(ellipse at 50% 82%, rgba(35, 35, 34, 0.14), transparent 68%);
+  filter: blur(5px);
+  opacity: 0.5;
+}
+
 body.observation-mode .handle,
 body.observation-mode .section-heading p,
 body.observation-mode .roman,
@@ -743,7 +776,7 @@ body.observation-mode .threshold-panel::after {
 }
 
 body.observation-mode .observation-trigger::before {
-  background: rgba(35, 35, 34, 0.26);
+  background: rgba(142, 49, 45, 0.9);
 }
 
 body.observation-mode .fictional-mode-label,
