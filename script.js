@@ -8,8 +8,8 @@ const links = [
   {
     label: "Novel",
     title: "カクヨム",
-    description: "小説とシリーズの置き場。",
-    href: "https://kakuyomu.jp/users/x0raki",
+    description: "代表作コレクション。",
+    href: "https://kakuyomu.jp/users/x0raki/collections/16818093088715945195",
   },
   {
     label: "Essay",
