@@ -33,6 +33,10 @@ body {
   font-family:
     "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", "Noto Serif JP", serif;
   letter-spacing: 0;
+  transition:
+    background 220ms ease,
+    color 220ms ease,
+    filter 220ms ease;
 }
 
 body::before {
@@ -173,6 +177,21 @@ h1 span {
 
 .lead span {
   display: block;
+}
+
+.observation-note {
+  display: none;
+  max-width: 560px;
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  padding: 18px 0;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  line-height: 1.9;
+}
+
+.observation-note p + p {
+  margin-top: 12px;
 }
 
 .text-link {
@@ -360,6 +379,42 @@ h1 span {
 .threshold-panel span:nth-child(3) {
   top: 72%;
   right: 18%;
+}
+
+.observation-trigger {
+  position: absolute;
+  top: 47%;
+  left: 58%;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: help;
+  transform: translate(-12px, -12px);
+}
+
+.observation-trigger::before {
+  position: absolute;
+  inset: 12px;
+  background: rgba(35, 35, 34, 0.08);
+  content: "";
+  transform: rotate(45deg);
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.observation-trigger:hover::before,
+.observation-trigger:focus-visible::before {
+  background: rgba(35, 35, 34, 0.28);
+  transform: rotate(45deg) scale(1.28);
+}
+
+.observation-trigger:focus-visible {
+  outline: 1px solid rgba(35, 35, 34, 0.42);
+  outline-offset: 4px;
 }
 
 .threshold-panel i {
@@ -575,6 +630,7 @@ h1 span {
 
 .site-footer {
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
   gap: 20px;
   margin-top: clamp(72px, 10vw, 120px);
@@ -583,6 +639,124 @@ h1 span {
   color: var(--muted);
   font-family: Inter, "Helvetica Neue", Arial, sans-serif;
   font-size: 0.92rem;
+}
+
+.fictional-mode-label,
+.observation-disclaimer,
+.observation-exit {
+  display: none;
+}
+
+.observation-disclaimer {
+  position: fixed;
+  left: 24px;
+  bottom: 22px;
+  z-index: 20;
+  max-width: min(420px, calc(100vw - 190px));
+  color: rgba(35, 35, 34, 0.66);
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", sans-serif;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.observation-exit {
+  position: fixed;
+  right: 24px;
+  bottom: 22px;
+  z-index: 20;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 8px;
+  color: rgba(35, 35, 34, 0.74);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+}
+
+body.observation-mode {
+  background:
+    linear-gradient(90deg, rgba(215, 215, 211, 0.5) 0 10%, transparent 10% 87%, rgba(202, 202, 198, 0.52) 87%),
+    linear-gradient(180deg, #f0efec, #e4e2dd);
+  color: #2c2c29;
+  filter: saturate(0.72);
+}
+
+body.observation-mode::before {
+  background-size: 72px 72px;
+  opacity: 0.78;
+}
+
+body.observation-mode .site-header {
+  backdrop-filter: blur(10px) grayscale(0.5);
+}
+
+body.observation-mode .hero,
+body.observation-mode .link-card,
+body.observation-mode .primary-links a {
+  background: rgba(240, 239, 236, 0.68);
+}
+
+body.observation-mode .hero-image {
+  filter: grayscale(0.55) contrast(0.94) brightness(1.02);
+}
+
+body.observation-mode .handle,
+body.observation-mode .section-heading p,
+body.observation-mode .roman,
+body.observation-mode .record-list small,
+body.observation-mode .link-card small,
+body.observation-mode .likes-grid h3 {
+  color: #6f797b;
+}
+
+body.observation-mode .lead {
+  display: none;
+}
+
+body.observation-mode .observation-note {
+  display: block;
+}
+
+body.observation-mode .profile-card h2 {
+  color: #262623;
+}
+
+body.observation-mode .threshold-panel {
+  background:
+    radial-gradient(circle at 62% 48%, rgba(233, 230, 222, 0.72), transparent 18%),
+    linear-gradient(90deg, rgba(145, 157, 161, 0.56) 0 8%, transparent 8%),
+    linear-gradient(rgba(35, 35, 34, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(35, 35, 34, 0.065) 1px, transparent 1px),
+    rgba(212, 211, 206, 0.72);
+  background-size: auto, auto, 120px 120px, 120px 120px, auto;
+}
+
+body.observation-mode .threshold-panel::before {
+  color: rgba(35, 35, 34, 0.105);
+}
+
+body.observation-mode .threshold-panel::after {
+  border-color: rgba(35, 35, 34, 0.18);
+  background:
+    linear-gradient(180deg, rgba(242, 240, 234, 0.48), rgba(218, 218, 211, 0.28)),
+    rgba(240, 239, 236, 0.24);
+}
+
+body.observation-mode .observation-trigger::before {
+  background: rgba(35, 35, 34, 0.26);
+}
+
+body.observation-mode .fictional-mode-label,
+body.observation-mode .observation-disclaimer,
+body.observation-mode .observation-exit {
+  display: block;
+}
+
+body.observation-mode .site-nav a,
+body.observation-mode .text-link,
+body.observation-mode .site-footer a,
+body.observation-mode .section-link {
+  text-decoration-style: dotted;
 }
 
 @media (max-width: 920px) {
@@ -698,6 +872,18 @@ h1 span {
 
   .site-footer {
     flex-direction: column;
+  }
+
+  .observation-exit {
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .observation-disclaimer {
+    left: 16px;
+    bottom: 54px;
+    max-width: calc(100vw - 32px);
+    padding-right: 14px;
   }
 }
 

@@ -47,6 +47,12 @@
             <span>AIと意識、リミナルスペース、ドリームコア、バッドエンド。</span>
             <span>静かな違和感、静寂と余白が好きです。</span>
           </p>
+          <div class="observation-note" aria-live="polite">
+            <p>この表示は、このページに仕込まれた創作上の隠し演出です。実在の出来事や本人の状態を示すものではありません。</p>
+            <p>このページは、公開されている断片をもとに、x0rakiという識別子について再構成した記録です。</p>
+            <p>「らきむぼん / 間間闇」という名義は、複数の場所で確認できます。ただし、それが一人の人物を指すのか、作品上の輪郭なのかは、この記録からは断定できません。</p>
+            <p>確かなことは多くありません。ただ、扉のようなものは最初からここにありました。</p>
+          </div>
           <a class="text-link" href="#profile">View Profile</a>
         </div>
       </section>
@@ -109,10 +115,11 @@
           </details>
         </div>
 
-        <div class="threshold-panel" aria-hidden="true">
+        <div class="threshold-panel">
           <span></span>
           <span></span>
           <span></span>
+          <button class="observation-trigger" type="button" aria-label="観測点"></button>
           <i></i>
         </div>
       </section>
@@ -215,9 +222,13 @@
 
     <footer class="site-footer">
       <p>らきむぼん / 間間闇</p>
+      <p class="fictional-mode-label">fictional observation mode</p>
       <a href="#top">先頭へ戻る</a>
     </footer>
 
-    <script src="script.js?v=5"></script>
+    <p class="observation-disclaimer">創作上の隠し演出です。実在の出来事や本人の状態を示すものではありません。</p>
+    <a class="observation-exit" href="#top" role="button">通常表示に戻る</a>
+
+    <script src="script.js?v=6"></script>
   </body>
 </html>
