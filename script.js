@@ -8,8 +8,8 @@ const links = [
   {
     label: "Novel",
     title: "カクヨム",
-    description: "代表作コレクション。",
-    href: "https://kakuyomu.jp/users/x0raki/collections/16818093088715945195",
+    description: "ミステリ、ホラー、SFなど。書くのは自分が読みたいもの。",
+    href: "https://kakuyomu.jp/users/x0raki",
   },
   {
     label: "Essay",
@@ -32,7 +32,7 @@ const links = [
   {
     label: "Archive",
     title: "GitHub",
-    description: "自作ツールと試作の記録。",
+    description: "自作ツールと試作の記録。非エンジニアのためほぼ公開していない。",
     href: "https://github.com/x0raki",
   },
   {
