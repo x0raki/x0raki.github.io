@@ -2,13 +2,13 @@ const links = [
   {
     label: "X",
     title: "@x0raki",
-    description: "日々の観測、読書、AI、創作の断片。",
+    description: "日々の観測、読書、創作の断片。",
     href: "https://x.com/x0raki",
   },
   {
     label: "Novel",
     title: "カクヨム",
-    description: "ミステリ、ホラー、SFなど。書くのは自分が読みたいもの。",
+    description: "小説の置き場。書くのは自分が読みたいもの。",
     href: "https://kakuyomu.jp/users/x0raki",
   },
   {
@@ -32,7 +32,7 @@ const links = [
   {
     label: "Archive",
     title: "GitHub",
-    description: "自作ツールと試作の記録。非エンジニアのためほぼ公開していない。",
+    description: "自作ツールと試作の記録。公開しているものだけ。",
     href: "https://github.com/x0raki",
   },
   {
