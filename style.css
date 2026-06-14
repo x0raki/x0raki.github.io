@@ -132,7 +132,6 @@ main,
 
 .handle,
 .section-heading p,
-.profile-kicker,
 .roman,
 .record-list small,
 .link-card small {
@@ -154,11 +153,15 @@ p {
 }
 
 h1 {
-  max-width: 9.4em;
-  font-size: clamp(3.1rem, 5.5vw, 5.6rem);
+  max-width: max-content;
+  font-size: clamp(3rem, 4.1vw, 4.35rem);
   font-weight: 500;
   line-height: 1.08;
-  text-wrap: balance;
+}
+
+h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .lead {
@@ -183,12 +186,6 @@ h1 {
 
 .profile-card {
   padding: clamp(28px, 5vw, 56px) 0;
-}
-
-.profile-kicker {
-  margin-bottom: 58px;
-  color: var(--muted);
-  font-size: 1rem;
 }
 
 .profile-card h2 {
@@ -407,21 +404,35 @@ h1 {
   padding-top: clamp(68px, 9vw, 110px);
 }
 
-.tag-field {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
+.likes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid var(--line-strong);
-  border-left: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-strong);
 }
 
-.tag-field span {
-  min-height: 58px;
+.likes-grid article {
+  min-height: 190px;
   border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 18px 20px;
-  background: rgba(251, 248, 245, 0.44);
+  padding: 24px 26px 30px 0;
+}
+
+.likes-grid article:last-child {
+  border-right: 0;
+}
+
+.likes-grid h3 {
+  margin: 0 0 22px;
+  color: #6d91a0;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.likes-grid p {
+  max-width: 20em;
   font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", sans-serif;
+  color: var(--muted);
+  line-height: 1.9;
 }
 
 .link-grid {
@@ -500,12 +511,14 @@ h1 {
   }
 
   .primary-links,
-  .link-grid {
+  .link-grid,
+  .likes-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .primary-links a:nth-child(2n),
-  .link-card:nth-child(2n) {
+  .link-card:nth-child(2n),
+  .likes-grid article:nth-child(2n) {
     border-right: 0;
   }
 }
@@ -526,15 +539,11 @@ h1 {
   }
 
   h1 {
-    font-size: clamp(2.55rem, 13vw, 4.2rem);
+    font-size: clamp(2.55rem, 13vw, 3.8rem);
   }
 
   .profile-card h2 {
     font-size: clamp(4.2rem, 22vw, 6rem);
-  }
-
-  .profile-kicker {
-    margin-bottom: 34px;
   }
 
   .profile-list div {
@@ -543,14 +552,17 @@ h1 {
   }
 
   .primary-links,
-  .link-grid {
+  .link-grid,
+  .likes-grid {
     grid-template-columns: 1fr;
   }
 
   .primary-links a,
   .primary-links a:nth-child(2n),
   .link-card,
-  .link-card:nth-child(2n) {
+  .link-card:nth-child(2n),
+  .likes-grid article,
+  .likes-grid article:nth-child(2n) {
     border-right: 0;
   }
 

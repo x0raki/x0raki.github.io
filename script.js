@@ -12,10 +12,10 @@ const links = [
     href: "https://kakuyomu.jp/users/x0raki",
   },
   {
-    label: "Code",
-    title: "GitHub",
-    description: "自作ツールと試作の記録。",
-    href: "https://github.com/x0raki",
+    label: "Essay",
+    title: "note",
+    description: "記事や長めの感想の置き場。",
+    href: "https://note.com/x0raki",
   },
   {
     label: "Tool",
@@ -28,6 +28,12 @@ const links = [
     title: "読書灯",
     description: "読書に入るための静かなタイマー。",
     href: "https://x0raki.github.io/reading-lamp/",
+  },
+  {
+    label: "Archive",
+    title: "GitHub",
+    description: "自作ツールと試作の記録。",
+    href: "https://github.com/x0raki",
   },
   {
     label: "Archive",
