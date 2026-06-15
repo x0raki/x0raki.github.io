@@ -590,6 +590,10 @@ h1 span {
   padding: 24px 26px 30px 0;
 }
 
+.likes-grid article + article {
+  padding-left: 26px;
+}
+
 .likes-grid article:last-child {
   border-right: 0;
 }
@@ -837,6 +841,14 @@ body.observation-mode .section-link {
   .likes-grid article:nth-child(2n) {
     border-right: 0;
   }
+
+  .likes-grid article:nth-child(2n + 1) {
+    padding-left: 0;
+  }
+
+  .likes-grid article:nth-child(2n) {
+    padding-left: 26px;
+  }
 }
 
 @media (max-width: 620px) {
@@ -885,6 +897,7 @@ body.observation-mode .section-link {
   .likes-grid article,
   .likes-grid article:nth-child(2n) {
     border-right: 0;
+    padding-left: 0;
   }
 
   .record-list a {
