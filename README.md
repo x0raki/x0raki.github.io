@@ -11,11 +11,12 @@ Site: https://x0raki.github.io/
 - 静的なプロフィールページです。
 - GitHub Pages で公開しています。
 - フレームワークは使わず、HTML / CSS / JavaScript だけで構成しています。
-- 詳しい好きなものや過去プロフィールは、ページ内から公開Notionへつないでいます。
+- 詳しい好きなものは、サイト内の `toybox.html` にまとめています。
 
 ## Files
 
 - `index.html`: ページ本体
+- `toybox.html`: 具体的な好きなものをまとめたページ
 - `style.css`: レイアウト、タイポグラフィ、ビジュアル表現
 - `script.js`: 下部リンク一覧の描画
 - `assets/threshold-room.png`: ヒーロー背景、OGP画像
@@ -36,7 +37,7 @@ http://127.0.0.1:4173/
 
 - 代表作リンクは `index.html` の `#writing` を編集します。
 - プロフィール本文は `index.html` の `.hero` と `#profile` を編集します。
-- 好きなものは `index.html` の `#likes` を編集します。
+- 好きなものの概要は `index.html` の `#likes`、具体的な一覧は `toybox.html` を編集します。
 - 下部リンク一覧は `script.js` の `links` を編集します。
 - `script.js` を更新したときは、`index.html` 末尾の `script.js?v=...` も上げます。
 

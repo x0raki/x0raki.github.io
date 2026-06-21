@@ -36,10 +36,10 @@ const links = [
     href: "https://github.com/x0raki",
   },
   {
-    label: "Archive",
-    title: "Notion",
-    description: "いままでの公開プロフィールと詳しい好きなもの。",
-    href: "https://app.notion.com/p/f5e33df257c4421aa381ca14c54f428e?pvs=28",
+    label: "Toybox",
+    title: "おもちゃ箱",
+    description: "思い出すために置いている、具体的な好きなものの棚。",
+    href: "toybox.html",
   },
 ];
 
@@ -47,15 +47,18 @@ const linkGrid = document.querySelector("#linkGrid");
 
 if (linkGrid) {
   linkGrid.innerHTML = links
-    .map(
-      (link) => `
-        <a class="link-card" href="${link.href}" target="_blank" rel="noreferrer">
+    .map((link) => {
+      const isExternal = link.href.startsWith("http");
+      const externalAttrs = isExternal ? ' target="_blank" rel="noreferrer"' : "";
+
+      return `
+        <a class="link-card" href="${link.href}"${externalAttrs}>
           <small>${link.label}</small>
           <strong>${link.title}</strong>
           <span>${link.description}</span>
         </a>
-      `,
-    )
+      `;
+    })
     .join("");
 }
 
@@ -75,6 +78,7 @@ const observationCopies = [
   ['#writing .section-heading h2', "確認された作品"],
   ['#tools .section-heading p', "Remaining tools"],
   ['#tools .section-heading h2', "残された道具"],
+  ['.site-nav a[href="toybox.html"]', "物証"],
   ['#likes .section-heading p', "Repeated words"],
   ["#likes-title", "本人が好んだ語"],
   ['#links .section-heading p', "References"],
