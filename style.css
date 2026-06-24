@@ -1368,8 +1368,13 @@ body.observation-mode .section-link {
   }
 
   .boundary-rail > p {
+    color: var(--boundary-blue);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    line-height: 1.8;
+    text-transform: uppercase;
     writing-mode: horizontal-tb;
-    font-size: clamp(2.4rem, 11vw, 5rem);
   }
 
   .boundary-rail dl {
