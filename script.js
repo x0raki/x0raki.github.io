@@ -18,6 +18,12 @@ const links = [
     href: "https://note.com/x0raki",
   },
   {
+    label: "Music",
+    title: "awAI mayami",
+    description: "間間闇によるAI-assisted music project。",
+    href: "https://youtu.be/uhPVaFJjh78",
+  },
+  {
     label: "Tool",
     title: "AWAI Draft",
     description: "メモと原稿のあいだを預かる執筆環境。",
@@ -65,6 +71,7 @@ if (linkGrid) {
 const observationCopies = [
   ['.site-nav a[href="#profile"]', "記録"],
   ['.site-nav a[href="#writing"]', "作品"],
+  ['.site-nav a[href="#music"]', "音響"],
   ['.site-nav a[href="#tools"]', "道具"],
   ['.site-nav a[href="#links"]', "痕跡"],
   [".text-link", "記録を読む"],

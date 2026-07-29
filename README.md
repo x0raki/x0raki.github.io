@@ -1,6 +1,6 @@
 # x0raki.github.io
 
-らきむぼん / 間間闇の公開プロフィールサイトです。
+らきむぼん / 間間闇の公開プロフィールサイトです。小説、Webツール、AI-assisted music project「awAI mayami」などの活動をまとめています。
 
 X などのプロフィールから訪れた人に向けて、創作、Webツール、好きなもの、各種リンクへの入口をまとめています。
 
@@ -36,6 +36,7 @@ http://127.0.0.1:4173/
 ## Update Notes
 
 - 代表作リンクは `index.html` の `#writing` を編集します。
+- 音楽活動は `index.html` の `#music` を編集します。
 - プロフィール本文は `index.html` の `.hero` と `#profile` を編集します。
 - 好きなものの概要は `index.html` の `#likes`、具体的な一覧は `toybox.html` を編集します。
 - 下部リンク一覧は `script.js` の `links` を編集します。
