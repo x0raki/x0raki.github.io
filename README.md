@@ -1,51 +1,63 @@
 # x0raki.github.io
 
-らきむぼん / 間間闇の公開プロフィールサイトです。小説、Webツール、AI-assisted music project「awAI mayami」などの活動をまとめています。
+らきむぼん / 間間闇の公開プロフィールサイトです。
 
-X などのプロフィールから訪れた人に向けて、創作、Webツール、好きなもの、各種リンクへの入口をまとめています。
+小説、Webツール、AI-assisted music project「awAI mayami」、好きなものへの入口をまとめています。
 
-Site: https://x0raki.github.io/
+[https://x0raki.github.io/](https://x0raki.github.io/)
 
-## Overview
+## Pages
 
-- 静的なプロフィールページです。
-- GitHub Pages で公開しています。
-- フレームワークは使わず、HTML / CSS / JavaScript だけで構成しています。
-- 詳しい好きなものは、サイト内の `toybox.html` にまとめています。
+| Page | Description |
+| --- | --- |
+| [`index.html`](./index.html) | プロフィール、創作、音楽、Webツール、外部リンク |
+| [`toybox.html`](./toybox.html) | 小説、映画、音楽など、具体的な好きなものの棚 |
+| [`boundary.html`](./boundary.html) | 「境界生成的な固有意識観」を記した隠しページ |
 
-## Files
+## Structure
 
-- `index.html`: ページ本体
-- `toybox.html`: 具体的な好きなものをまとめたページ
-- `style.css`: レイアウト、タイポグラフィ、ビジュアル表現
-- `script.js`: 下部リンク一覧の描画
-- `assets/threshold-room.png`: ヒーロー背景、OGP画像
+```text
+.
+├── assets/
+│   ├── favicon.svg
+│   └── threshold-room.png
+├── boundary.html
+├── index.html
+├── script.js
+├── style.css
+└── toybox.html
+```
 
-## Local Preview
+フレームワークやビルド工程は使っていません。HTML / CSS / JavaScriptをGitHub Pagesからそのまま配信します。本文とリンクはJavaScriptを無効にした環境でも読めます。JavaScriptはトップページの隠し演出にだけ使用しています。
+
+## Local preview
 
 ```sh
 python3 -m http.server 4173
 ```
 
-Open:
+ブラウザで `http://127.0.0.1:4173/` を開きます。
 
-```text
-http://127.0.0.1:4173/
-```
+## Updating content
 
-## Update Notes
+- プロフィール、代表作、音楽、Webツール、リンク: [`index.html`](./index.html)
+- 好きなものの一覧: [`toybox.html`](./toybox.html)
+- 境界生成的な固有意識観: [`boundary.html`](./boundary.html)
+- レイアウトとビジュアル: [`style.css`](./style.css)
+- トップページの隠し演出: [`script.js`](./script.js)
 
-- 代表作リンクは `index.html` の `#writing` を編集します。
-- 音楽活動は `index.html` の `#music` を編集します。
-- プロフィール本文は `index.html` の `.hero` と `#profile` を編集します。
-- 好きなものの概要は `index.html` の `#likes`、具体的な一覧は `toybox.html` を編集します。
-- 下部リンク一覧は `script.js` の `links` を編集します。
-- `script.js` を更新したときは、`index.html` 末尾の `script.js?v=...` も上げます。
+`script.js` を更新した場合は、`index.html` 末尾にあるクエリ文字列も更新し、ブラウザキャッシュを切り替えます。
 
-## Public Repository Notes
+## Publishing
 
-このリポジトリは公開リポジトリです。
+`main` ブランチが公開元です。変更をpushするとGitHub Pagesへ反映されます。`.nojekyll` は、Jekyllの変換を介さない静的サイトであることを明示しています。
 
-- 秘密鍵、APIキー、連絡先、住所、詳細な生年月日などは置きません。
-- 画像やリンクは公開してよいものだけを含めます。
-- コードと画像の再利用は現時点では想定していません。
+## Public repository policy
+
+このリポジトリには、公開してよい文章、画像、リンクだけを置きます。秘密鍵、APIキー、非公開の連絡先、住所、詳細な生年月日、制作途中の私的資料は含めません。
+
+## Rights
+
+Copyright © 2026 x0raki. All rights reserved.
+
+コード、文章、画像の再利用を許諾するオープンソースライセンスは設定していません。詳しくは [`LICENSE`](./LICENSE) を参照してください。

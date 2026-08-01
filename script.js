@@ -1,72 +1,4 @@
-const links = [
-  {
-    label: "X",
-    title: "@x0raki",
-    description: "日々の観測、読書、創作の断片。",
-    href: "https://x.com/x0raki",
-  },
-  {
-    label: "Novel",
-    title: "カクヨム",
-    description: "小説の置き場。書くのは自分が読みたいもの。",
-    href: "https://kakuyomu.jp/users/x0raki",
-  },
-  {
-    label: "Essay",
-    title: "note",
-    description: "記事や長めの感想の置き場。",
-    href: "https://note.com/x0raki",
-  },
-  {
-    label: "Music",
-    title: "awAI mayami",
-    description: "Sunoで聴く、全6曲のプレイリスト「明滅」。",
-    href: "https://suno.com/playlist/891c8ab1-869d-4107-9feb-cfc3fa5e88c2",
-  },
-  {
-    label: "Tool",
-    title: "AWAI Draft",
-    description: "メモと原稿のあいだを預かる執筆環境。",
-    href: "https://awai-draft.netlify.app/",
-  },
-  {
-    label: "Tool",
-    title: "読書灯",
-    description: "読書に入るための静かなタイマー。",
-    href: "https://x0raki.github.io/reading-lamp/",
-  },
-  {
-    label: "Archive",
-    title: "GitHub",
-    description: "自作ツールと試作の記録。公開しているものだけ。",
-    href: "https://github.com/x0raki",
-  },
-  {
-    label: "Toybox",
-    title: "おもちゃ箱",
-    description: "思い出すために置いている、具体的な好きなものの棚。",
-    href: "toybox.html",
-  },
-];
-
-const linkGrid = document.querySelector("#linkGrid");
-
-if (linkGrid) {
-  linkGrid.innerHTML = links
-    .map((link) => {
-      const isExternal = link.href.startsWith("http");
-      const externalAttrs = isExternal ? ' target="_blank" rel="noreferrer"' : "";
-
-      return `
-        <a class="link-card" href="${link.href}"${externalAttrs}>
-          <small>${link.label}</small>
-          <strong>${link.title}</strong>
-          <span>${link.description}</span>
-        </a>
-      `;
-    })
-    .join("");
-}
+"use strict";
 
 const observationCopies = [
   ['.site-nav a[href="#profile"]', "記録"],
@@ -112,6 +44,7 @@ let triggerTimer = 0;
 
 function setObservationMode(enabled) {
   document.body.classList.toggle("observation-mode", enabled);
+  trigger?.setAttribute("aria-pressed", String(enabled));
   document.title = enabled
     ? "観測記録 | x0raki"
     : "らきむぼん / 間間闇 | x0raki";
@@ -136,20 +69,22 @@ function countObservationClick() {
   }, 1200);
 }
 
+function exitObservationMode(event) {
+  event?.preventDefault();
+  setObservationMode(false);
+  trigger?.focus({ preventScroll: true });
+}
+
 if (trigger) {
   trigger.addEventListener("click", countObservationClick);
 }
 
 if (exit) {
-  exit.addEventListener("click", (event) => {
-    event.preventDefault();
-    setObservationMode(false);
-    trigger?.focus({ preventScroll: true });
-  });
+  exit.addEventListener("click", exitObservationMode);
 }
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && document.body.classList.contains("observation-mode")) {
-    setObservationMode(false);
+    exitObservationMode();
   }
 });
