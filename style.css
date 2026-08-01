@@ -712,6 +712,12 @@ h1 span {
   align-self: end;
 }
 
+.music-records small {
+  line-height: 1.45;
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
 .music-records a {
   min-height: 126px;
 }

@@ -20,8 +20,8 @@ const links = [
   {
     label: "Music",
     title: "awAI mayami",
-    description: "間間闇によるAI-assisted music project。",
-    href: "https://youtu.be/uhPVaFJjh78",
+    description: "Sunoで聴く、全6曲のプレイリスト「明滅」。",
+    href: "https://suno.com/playlist/891c8ab1-869d-4107-9feb-cfc3fa5e88c2",
   },
   {
     label: "Tool",
