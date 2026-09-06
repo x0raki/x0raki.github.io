@@ -48,6 +48,8 @@ python3 -m http.server 4173
 
 `script.js` を更新した場合は、`index.html` 末尾にあるクエリ文字列も更新し、ブラウザキャッシュを切り替えます。
 
+`style.css` を更新した場合も、全3ページのCSS参照のクエリ文字列を揃えて更新します。
+
 ## Publishing
 
 `main` ブランチが公開元です。変更をpushするとGitHub Pagesへ反映されます。`.nojekyll` は、Jekyllの変換を介さない静的サイトであることを明示しています。

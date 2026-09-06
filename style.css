@@ -844,6 +844,9 @@ h1 span {
   bottom: 22px;
   z-index: 20;
   max-width: min(420px, calc(100vw - 190px));
+  margin: 0;
+  padding: 8px 12px;
+  background: var(--paper-soft);
   color: rgba(35, 35, 34, 0.66);
   font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", sans-serif;
   font-size: 0.78rem;
@@ -855,8 +858,13 @@ h1 span {
   right: 24px;
   bottom: 22px;
   z-index: 20;
+  border: 0;
   border-top: 1px solid var(--line-strong);
-  padding-top: 8px;
+  border-radius: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  background: var(--paper-soft);
+  cursor: pointer;
   color: rgba(35, 35, 34, 0.74);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.78rem;
@@ -871,6 +879,10 @@ body.observation-mode {
     linear-gradient(90deg, rgba(215, 215, 211, 0.5) 0 10%, transparent 10% 87%, rgba(202, 202, 198, 0.52) 87%),
     linear-gradient(180deg, #f0efec, #e4e2dd);
   color: #2c2c29;
+}
+
+/* A filter on body would make fixed controls scroll with the document. */
+body.observation-mode > main {
   filter: saturate(0.72);
 }
 
@@ -1484,7 +1496,7 @@ body.observation-mode .section-link {
   .profile-section,
   .split-sections,
   .music-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .music-section {
@@ -1611,17 +1623,15 @@ body.observation-mode .section-link {
   }
 
   .site-nav {
-    flex-wrap: nowrap;
-    gap: 16px;
-    padding: 5px 1px 8px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scrollbar-width: none;
-    white-space: nowrap;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    padding: 4px 0;
   }
 
-  .site-nav::-webkit-scrollbar {
-    display: none;
+  .site-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
   }
 
   .hero-image {
@@ -1699,7 +1709,7 @@ body.observation-mode .section-link {
   }
 
   .record-list a {
-    grid-template-columns: 1fr 26px;
+    grid-template-columns: minmax(0, 1fr) 26px;
     gap: 8px 12px;
   }
 
@@ -1725,7 +1735,7 @@ body.observation-mode .section-link {
 
   .observation-disclaimer {
     left: 16px;
-    bottom: 54px;
+    bottom: 68px;
     max-width: calc(100vw - 32px);
     padding-right: 14px;
   }
@@ -1786,5 +1796,6 @@ body.observation-mode .section-link {
   *::after {
     scroll-behavior: auto !important;
     transition: none !important;
+    animation: none !important;
   }
 }
