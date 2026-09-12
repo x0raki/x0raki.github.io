@@ -20,15 +20,18 @@
 .
 ├── assets/
 │   ├── favicon.svg
-│   └── threshold-room.png
+│   ├── threshold-room.png
+│   ├── threshold-corridor.jpg
+│   └── threshold-atrium.jpg
 ├── boundary.html
 ├── index.html
+├── scene.js
 ├── script.js
 ├── style.css
 └── toybox.html
 ```
 
-フレームワークやビルド工程は使っていません。HTML / CSS / JavaScriptをGitHub Pagesからそのまま配信します。本文とリンクはJavaScriptを無効にした環境でも読めます。JavaScriptはトップページの隠し演出にだけ使用しています。
+フレームワークやビルド工程は使っていません。HTML / CSS / JavaScriptをGitHub Pagesからそのまま配信します。本文とリンクはJavaScriptを無効にした環境でも読めます。JavaScriptはトップページの風景選択と隠し演出に使用しています。
 
 ## Local preview
 
@@ -44,6 +47,7 @@ python3 -m http.server 4173
 - 好きなものの一覧: [`toybox.html`](./toybox.html)
 - 境界生成的な固有意識観: [`boundary.html`](./boundary.html)
 - レイアウトとビジュアル: [`style.css`](./style.css)
+- トップページの風景選択: [`scene.js`](./scene.js)
 - トップページの隠し演出: [`script.js`](./script.js)
 
 `script.js` を更新した場合は、`index.html` 末尾にあるクエリ文字列も更新し、ブラウザキャッシュを切り替えます。
@@ -63,3 +67,9 @@ python3 -m http.server 4173
 Copyright © 2026 x0raki. All rights reserved.
 
 コード、文章、画像の再利用を許諾するオープンソースライセンスは設定していません。詳しくは [`LICENSE`](./LICENSE) を参照してください。
+
+## Top-page scenes
+
+トップページを開くたびに、部屋・回廊・中庭の3種類から風景を選び、背景色も合わせます。閲覧中の自動切り替えはありません。sessionStorageが利用できる場合、同じタブでは直前の風景を避けます。保存不可でもランダム選択は動作します。JavaScript無効時と追加画像の読み込み失敗時は従来の部屋を表示します。SNSカード画像は従来のまま固定です。
+
+`scene.js` 更新時はトップページの参照クエリも更新してください。追加2画像は組み込みimagegenで生成しました。生成プロンプトは [`assets/scene-prompts.md`](./assets/scene-prompts.md) に記録しています。
