@@ -1766,11 +1766,15 @@ body.observation-mode .section-link {
   }
 
   .primary-links a,
-  .primary-links a:nth-child(2n),
+  .primary-links a:nth-child(2n) {
+    border-right: 0;
+    padding-left: 0;
+  }
+
   .link-card,
   .link-card:nth-child(2n) {
     border-right: 0;
-    padding-left: 0;
+    padding-inline: 18px;
   }
 
   .likes-grid article {
