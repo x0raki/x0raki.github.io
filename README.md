@@ -28,10 +28,11 @@
 ├── scene.js
 ├── script.js
 ├── style.css
+├── theme.js
 └── toybox.html
 ```
 
-フレームワークやビルド工程は使っていません。HTML / CSS / JavaScriptをGitHub Pagesからそのまま配信します。本文とリンクはJavaScriptを無効にした環境でも読めます。JavaScriptはトップページの風景選択と隠し演出に使用しています。
+フレームワークやビルド工程は使っていません。HTML / CSS / JavaScriptをGitHub Pagesからそのまま配信します。本文とリンクはJavaScriptを無効にした環境でも読めます。JavaScriptはトップページの風景選択、隠し演出、全ページ共通の配色切り替えに使用しています。
 
 ## Local preview
 
@@ -49,10 +50,13 @@ python3 -m http.server 4173
 - レイアウトとビジュアル: [`style.css`](./style.css)
 - トップページの風景選択: [`scene.js`](./scene.js)
 - トップページの隠し演出: [`script.js`](./script.js)
+- 全ページ共通の配色切り替え: [`theme.js`](./theme.js)
 
 `script.js` を更新した場合は、`index.html` 末尾にあるクエリ文字列も更新し、ブラウザキャッシュを切り替えます。
 
 `style.css` を更新した場合も、全3ページのCSS参照のクエリ文字列を揃えて更新します。
+
+`theme.js` を更新した場合も、全3ページの参照クエリを揃えて更新します。初回は端末の配色設定に合わせ、手動で選んだ配色は `localStorage` に保存します。
 
 ## Publishing
 
