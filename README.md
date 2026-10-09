@@ -62,6 +62,22 @@ python3 -m http.server 4173
 
 `main` ブランチが公開元です。変更をpushするとGitHub Pagesへ反映されます。`.nojekyll` は、Jekyllの変換を介さない静的サイトであることを明示しています。
 
+### ChatGPT Sites mirror
+
+[https://profile.x0raki.chatgpt.site](https://profile.x0raki.chatgpt.site) に、同じ3ページ・画像・配色切り替え・隠し演出を一般公開しています。
+
+更新元はこのリポジトリ直下のHTML / CSS / JavaScriptと `assets/` です。Sites側だけを直接編集すると差分が生じるため、両方へ反映する変更は先に更新元へ適用します。
+
+```sh
+node scripts/prepare-sites.mjs --origin https://profile.x0raki.chatgpt.site
+```
+
+このコマンドは公開対象のファイルだけを `.sites-profile/dist/` へコピーします。本文・デザイン・画像を保持し、Sites版の `og:url` と `og:image` をSitesのURLに合わせます。検索向けの `canonical` はGitHub Pagesを引き続き指します。
+
+`.sites-profile/` はGitHub側のGit管理から除外したSites専用チェックアウトです。`.sites-profile/.openai/hosting.json` に既存Siteの識別子と配信設定を保持し、Sitesの保存先では公開版のソースを履歴管理しています。
+
+準備コマンドだけではSitesの公開内容は変わりません。更新するときは、このチェックアウトを使って既存Siteのソースを同期し、公開アーカイブ付きのバージョンを保存して、そのバージョンを公開します。新しいSiteを作り直す必要はありません。GitHub PagesへのpushとSitesへの公開は別の操作です。
+
 ## Public repository policy
 
 このリポジトリには、公開してよい文章、画像、リンクだけを置きます。秘密鍵、APIキー、非公開の連絡先、住所、詳細な生年月日、制作途中の私的資料は含めません。

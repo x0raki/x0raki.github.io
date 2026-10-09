@@ -3,3 +3,4 @@ Thumbs.db
 *.log
 .playwright-cli/
 output/
+.sites-profile/
