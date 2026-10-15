@@ -1,20 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="x0raki favicon">
   <title>x0raki favicon</title>
-  <defs>
-    <clipPath id="tile">
-      <rect width="64" height="64" rx="13"/>
-    </clipPath>
-  </defs>
-
-  <g clip-path="url(#tile)">
-    <rect width="64" height="64" fill="#f6f4f1"/>
-    <path d="M0 41h25L11 64H0z" fill="#d3e0d9"/>
-    <path d="M46 0h18v35L49 50h-3z" fill="#fbe7e7"/>
-  </g>
-
-  <g fill="none" stroke="#527b8b" stroke-width="5.5" stroke-linecap="round">
-    <path d="m14.5 19.5 16 25m0-25-16 25"/>
-    <circle cx="43" cy="32" r="12"/>
-  </g>
-  <circle cx="51.5" cy="23.5" r="2.75" fill="#d7949f"/>
+  <rect width="64" height="64" rx="15" fill="#29454d"/>
+  <rect x="32" y="14" width="21" height="36" rx="10.5" fill="none" stroke="#f6f4f1" stroke-width="6"/>
+  <path d="m13 23 17 22m0-22L13 45" fill="none" stroke="#b8d8cd" stroke-width="6" stroke-linecap="square"/>
+  <path d="M42.5 11H48v6h-5.5z" fill="#e5b8b6"/>
 </svg>
